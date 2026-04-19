@@ -1,0 +1,10 @@
+# Jangan upload folder library yang berat
+node_modules/
+
+# JANGAN UPLOAD API KEY GUA!
+.env
+
+# Jangan upload file log error
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

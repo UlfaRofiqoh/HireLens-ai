@@ -1,0 +1,216 @@
+:root {
+  --bg-main: #f8fafc;        /* Putih kebiruan terang untuk background utama */
+  --nav-navy: #0f172a;       /* Navy gelap solid untuk Header & Footer */
+  --cherry-primary: #991b1b; /* Merah Crimson untuk aksen & tombol */
+  --text-dark: #1e293b;      /* Teks gelap supaya tajam dibaca */
+  --text-secondary: #64748b;
+  --bot-bubble: #ffffff;     /* Bubble chat bot putih bersih */
+  --user-bubble: #e2e8f0;    /* Bubble chat user abu muda kebiruan */
+  --border-color: #e2e8f0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #e2e8f0; /* Warna abu-abu kebiruan terang */
+  
+  /* Bikin pola selang-seling (Staggered Pattern) pakai 2 layer SVG yang sama */
+  background-image: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23991b1b" opacity="0.04"><path d="M428.3 3c11.6-6.4 26.2-2.3 32.6 9.3l4.8 8.7c19.3 34.1 19.8 75.7 1.4 110.1L407.9 241c-3.1 5.9-6.4 11.6-10 17.1-9.8 15-21 28.5-33.3 40.4-1.8 1.8-3.7 3.5-5.6 5.2 27.6 15 48.6 40.7 57.6 71.9 11.5 40 1.2 83.1-26.6 113.8-31.5 34.8-82.5 45.4-124.9 25.9-19.6-9-36-24-46.7-42.9-10.7 18.9-27.1 33.9-46.7 42.9-42.4 19.5-93.4 8.9-124.9-25.9-27.8-30.7-38.1-73.8-26.6-113.8 9-31.2 30-56.9 57.6-71.9-1.9-1.7-3.8-3.4-5.6-5.2C10.5 197.6-16.1 98.6 22 17.5 28.2 4.6 43.1-1.6 56 4.5l5.9 2.8c34.1 16.3 58.7 46 67.5 81.3 4.8 19.3 6.1 39.4 3.7 59l-4.1 33.7c47.9-38.3 103-77.4 162.1-112.4L337.5 40c21.2-12.6 45.1-20.9 69.8-24.4l21-3z"/></svg>'),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="%23991b1b" opacity="0.04"><path d="M428.3 3c11.6-6.4 26.2-2.3 32.6 9.3l4.8 8.7c19.3 34.1 19.8 75.7 1.4 110.1L407.9 241c-3.1 5.9-6.4 11.6-10 17.1-9.8 15-21 28.5-33.3 40.4-1.8 1.8-3.7 3.5-5.6 5.2 27.6 15 48.6 40.7 57.6 71.9 11.5 40 1.2 83.1-26.6 113.8-31.5 34.8-82.5 45.4-124.9 25.9-19.6-9-36-24-46.7-42.9-10.7 18.9-27.1 33.9-46.7 42.9-42.4 19.5-93.4 8.9-124.9-25.9-27.8-30.7-38.1-73.8-26.6-113.8 9-31.2 30-56.9 57.6-71.9-1.9-1.7-3.8-3.4-5.6-5.2C10.5 197.6-16.1 98.6 22 17.5 28.2 4.6 43.1-1.6 56 4.5l5.9 2.8c34.1 16.3 58.7 46 67.5 81.3 4.8 19.3 6.1 39.4 3.7 59l-4.1 33.7c47.9-38.3 103-77.4 162.1-112.4L337.5 40c21.2-12.6 45.1-20.9 69.8-24.4l21-3z"/></svg>');
+  
+  /* Ukuran ceri dibikin kecil-kecil (80px) */
+  background-size: 80px 80px, 80px 80px;
+  
+  /* Layer 1 di posisi normal (0 0), Layer 2 digeser setengah jalan (40px) */
+  background-position: 0 0, 40px 40px;
+  background-repeat: repeat, repeat;
+  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========================
+   SCREEN 1: LANDING PAGE 
+   ======================== */
+.splash-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+  z-index: 100;
+  transition: opacity 0.5s ease-out;
+}
+
+.splash-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  color: white;
+}
+
+.splash-header h1 { font-size: 42px; margin: 0; }
+.highlight { color: var(--cherry-primary); }
+
+.primary-btn {
+  margin-top: 30px;
+  padding: 15px 35px;
+  background-color: var(--cherry-primary);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(153, 27, 27, 0.4);
+}
+
+.primary-btn:hover { transform: translateY(-2px); background-color: #b91c1c; }
+
+/* ========================
+   SCREEN 2: MAIN CHAT UI 
+   ======================== */
+.main-container {
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  background: white;
+  border-radius: 16px;
+  /* Shadow ini yang bikin kotaknya berdimensi & melayang dari background luar */
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header: Navy Solid */
+.glass-header {
+  background: var(--nav-navy);
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info h2 { margin: 0; font-size: 20px; color: white; }
+.header-info p { margin: 2px 0 0; font-size: 12px; color: #94a3b8; }
+
+.end-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Chat Area: Bright & Clean */
+.chat-box {
+  flex: 1;
+  background-color: var(--bg-main);
+  padding: 25px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Bubbles */
+.message-wrapper { display: flex; max-width: 85%; }
+.message-wrapper.bot { align-self: flex-start; }
+.message-wrapper.user { align-self: flex-end; flex-direction: row-reverse; }
+
+.avatar {
+  width: 35px; height: 35px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: bold; font-size: 12px; margin: 0 12px; color: white; flex-shrink: 0;
+}
+.bot .avatar { background: var(--cherry-primary); }
+.user .avatar { background: #334155; }
+
+.bubble {
+  padding: 12px 18px; border-radius: 18px; font-size: 15px; line-height: 1.6; white-space: pre-wrap;
+}
+.bot .bubble {
+  background: var(--bot-bubble);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  border-top-left-radius: 2px;
+}
+.user .bubble {
+  background: var(--user-bubble);
+  color: var(--text-dark);
+  border-top-right-radius: 2px;
+}
+
+/* Quick Replies */
+.quick-replies { display: flex; gap: 8px; padding: 0 25px 15px; background: var(--bg-main); overflow-x: auto; }
+.chip {
+  background: white; border: 1px solid var(--border-color); color: var(--text-dark);
+  padding: 8px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; white-space: nowrap;
+}
+.chip:hover { border-color: var(--cherry-primary); color: var(--cherry-primary); }
+
+/* Footer Form: Navy Solid */
+form {
+  background: var(--nav-navy);
+  padding: 20px 25px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* TOMBOL UPLOAD: Circle Navy yang Jelas */
+.attach-btn {
+  background: #1e293b;
+  width: 50px; height: 50px;
+  border-radius: 50%;
+  border: 1px solid #334155;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: 0.3s;
+}
+.attach-btn span { font-size: 24px; color: white; }
+.attach-btn:hover { background: var(--cherry-primary); transform: scale(1.05); }
+
+input[type="text"] {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 30px;
+  font-size: 15px;
+}
+input[type="text"]:focus { outline: none; border-color: var(--cherry-primary); }
+
+.send-btn {
+  background: var(--cherry-primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Typing Animation */
+.typing-dots span {
+  display: inline-block; width: 6px; height: 6px; background: var(--text-secondary);
+  border-radius: 50%; margin: 0 2px; animation: bounce 1.4s infinite ease-in-out;
+}
+@keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }

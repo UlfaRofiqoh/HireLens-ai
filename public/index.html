@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HireLens - Professional AI Interview Simulation</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div id="landing-page" class="splash-screen">
+    <div class="splash-content glass-effect">
+      <div class="splash-header">
+        <h1>Hire<span class="highlight">Lens</span></h1>
+        <p>AI Interview Simulation</p>
+      </div>
+      <div class="splash-body">
+        <h3>Are you ready for the hot seat?</h3>
+        <p>Prepare yourself for realistic interviews simulated by Cherry, our professional AI recruiter.</p>
+        <p>Before we begin, you can share your CV or portfolio for better personal experience.</p>
+      </div>
+      <div class="splash-footer">
+        <button id="start-btn" class="primary-btn">Start My Simulation</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="chat-container" class="main-container" style="display: none;">
+    <div class="glass-header">
+        <div class="header-info">
+            <h2>HireLens</h2>
+            <p>Professional Interview Simulation by Cherry</p>
+        </div>
+        <button id="end-interview-btn" class="end-btn">End Session</button>
+    </div>
+    
+    <div id="chat-box" class="chat-box"></div>
+    
+    
+    <form id="chat-form">
+      <input type="file" id="file-input" accept=".pdf,.png,.jpg" hidden />
+      <button type="button" id="attach-btn" title="Upload CV/Resume" class="attach-btn">
+        <span>📎</span>
+      </button>
+      
+      <input type="text" id="user-input" placeholder="Type your response here..." autocomplete="off" required />
+      <button type="submit" id="send-btn" class="send-btn">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
